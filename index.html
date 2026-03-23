@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>기루다(GIRUDA) - 마이티 카드게임 앱 | 온라인 & AI 대전</title>
-  <meta name="description" content="마이티 카드게임을 모바일에서 즐기세요. AI 대전, 온라인 멀티플레이, 실전 튜토리얼까지. 5명이 함께하는 전략적 트릭테이킹 카드게임.">
-  <meta name="keywords" content="마이티, mighty, 카드게임, 트릭테이킹, 기루다, giruda, 마이티 앱, 마이티 게임, 카드게임 앱">
+  <meta name="description" content="마이티 카드게임을 모바일에서 즐기세요. AI 대전, 온라인 멀티플레이, 실전 튜토리얼까지. 5명이 함께하는 전략적 트릭테이킹 카드게임. Similar to Bridge, Spades, Napoleon.">
+  <meta name="keywords" content="마이티, mighty, 카드게임, 트릭테이킹, 기루다, giruda, 마이티 앱, 마이티 게임, 카드게임 앱, bridge, spades, napoleon, trick-taking">
   <meta property="og:title" content="기루다(GIRUDA) - 마이티 카드게임 앱">
   <meta property="og:description" content="마이티 카드게임을 모바일에서 즐기세요. AI 대전, 온라인 멀티플레이, 실전 튜토리얼까지.">
   <meta property="og:image" content="https://pjk0007.github.io/images/icon.png">
@@ -23,7 +23,6 @@
       overflow-x: hidden;
     }
 
-    /* Language selector */
     .lang-selector {
       position: fixed;
       top: 16px;
@@ -50,10 +49,7 @@
     }
 
     .lang-btn:hover { color: #fff; }
-    .lang-btn.active {
-      background: #7c5cfc;
-      color: #fff;
-    }
+    .lang-btn.active { background: #7c5cfc; color: #fff; }
 
     /* Hero */
     .hero {
@@ -88,166 +84,85 @@
       box-shadow: 0 8px 32px rgba(124, 92, 252, 0.3);
     }
 
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      margin-bottom: 12px;
-    }
+    .hero h1 { font-size: 48px; font-weight: 800; letter-spacing: 4px; margin-bottom: 12px; }
+    .hero .subtitle { font-size: 18px; color: #8888aa; margin-bottom: 12px; }
+    .hero .similar { font-size: 14px; color: #6666aa; margin-bottom: 40px; }
 
-    .hero .subtitle {
-      font-size: 18px;
-      color: #8888aa;
-      margin-bottom: 40px;
-    }
+    .download-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .store-badge-ios { height: 52px; transition: transform 0.3s; }
+    .store-badge-android { height: 76px; margin: -12px 0; transition: transform 0.3s; }
+    .store-badge-ios:hover, .store-badge-android:hover { transform: translateY(-2px); }
 
-    .download-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    /* Section common */
+    section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+    section h2 { text-align: center; font-size: 32px; margin-bottom: 16px; }
+    section .section-desc { text-align: center; color: #8888aa; font-size: 16px; margin-bottom: 48px; }
 
-    .store-badge-ios {
-      height: 52px;
-      transition: transform 0.3s;
-    }
+    /* About Mighty */
+    .about-mighty { background: rgba(124, 92, 252, 0.05); border-radius: 24px; padding: 60px 40px; margin: 0 auto; max-width: 1000px; }
+    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .about-text h3 { font-size: 22px; margin-bottom: 16px; color: #7c5cfc; }
+    .about-text p { color: #aaaacc; font-size: 15px; margin-bottom: 12px; line-height: 1.8; }
+    .about-highlights { display: flex; flex-direction: column; gap: 16px; }
+    .highlight-item { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 20px; }
+    .highlight-item .icon { font-size: 28px; margin-bottom: 8px; }
+    .highlight-item h4 { font-size: 16px; margin-bottom: 4px; }
+    .highlight-item p { color: #8888aa; font-size: 13px; }
 
-    .store-badge-android {
-      height: 76px;
-      margin: -12px 0;
-      transition: transform 0.3s;
-    }
+    /* Rules */
+    .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .rule-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 24px; }
+    .rule-card .step { display: inline-block; background: #7c5cfc; color: #fff; width: 32px; height: 32px; border-radius: 50%; text-align: center; line-height: 32px; font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+    .rule-card h3 { font-size: 17px; margin-bottom: 8px; }
+    .rule-card p { color: #8888aa; font-size: 14px; line-height: 1.7; }
 
-    .store-badge-ios:hover,
-    .store-badge-android:hover {
-      transform: translateY(-2px);
-    }
+    /* Special cards */
+    .special-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
+    .special-card { background: rgba(124, 92, 252, 0.08); border: 1px solid rgba(124, 92, 252, 0.2); border-radius: 12px; padding: 20px; text-align: center; }
+    .special-card .card-icon { font-size: 32px; margin-bottom: 8px; }
+    .special-card h4 { font-size: 15px; margin-bottom: 4px; color: #7c5cfc; }
+    .special-card p { color: #8888aa; font-size: 13px; }
 
     /* Features */
-    .features {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .features h2 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 48px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .feature-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 28px;
-      transition: all 0.3s;
-    }
-
-    .feature-card:hover {
-      background: rgba(124, 92, 252, 0.08);
-      border-color: rgba(124, 92, 252, 0.3);
-      transform: translateY(-4px);
-    }
-
-    .feature-icon {
-      font-size: 36px;
-      margin-bottom: 16px;
-    }
-
-    .feature-card h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .feature-card p {
-      color: #8888aa;
-      font-size: 14px;
-    }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .feature-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 28px; transition: all 0.3s; }
+    .feature-card:hover { background: rgba(124, 92, 252, 0.08); border-color: rgba(124, 92, 252, 0.3); transform: translateY(-4px); }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .feature-card p { color: #8888aa; font-size: 14px; }
 
     /* Screenshots */
-    .screenshots {
-      padding: 80px 20px;
-      text-align: center;
-    }
+    .screenshots { text-align: center; }
+    .screenshots-scroll { display: flex; gap: 20px; overflow-x: auto; padding: 0 20px 20px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; justify-content: center; flex-wrap: wrap; }
+    .screenshots-scroll img { width: 220px; border-radius: 16px; scroll-snap-align: center; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); transition: transform 0.3s; }
+    .screenshots-scroll img:hover { transform: scale(1.03); }
 
-    .screenshots h2 {
-      font-size: 32px;
-      margin-bottom: 48px;
-    }
-
-    .screenshots-scroll {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      padding: 0 20px 20px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .screenshots-scroll img {
-      width: 220px;
-      border-radius: 16px;
-      scroll-snap-align: center;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s;
-    }
-
-    .screenshots-scroll img:hover {
-      transform: scale(1.03);
-    }
+    /* CTA */
+    .cta { text-align: center; padding: 80px 20px; }
+    .cta h2 { font-size: 28px; margin-bottom: 24px; }
+    .cta .download-buttons { margin-top: 24px; }
 
     /* Footer */
-    footer {
-      padding: 40px 20px;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    .footer-links a {
-      color: #8888aa;
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-
+    footer { padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.08); max-width: 1000px; margin: 0 auto; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; }
+    .footer-links a { color: #8888aa; text-decoration: none; font-size: 14px; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
+    .footer-copy { color: #555; font-size: 13px; }
 
-    .footer-copy {
-      color: #555;
-      font-size: 13px;
-    }
-
-    /* Responsive */
     @media (max-width: 600px) {
       .hero h1 { font-size: 36px; }
       .hero .subtitle { font-size: 16px; }
       .download-buttons { flex-direction: column; align-items: center; }
       .screenshots-scroll { justify-content: flex-start; flex-wrap: nowrap; }
       .screenshots-scroll img { width: 180px; }
-      .features h2, .screenshots h2 { font-size: 24px; }
+      section h2 { font-size: 24px; }
+      .about-mighty { padding: 40px 20px; }
+      .about-content { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Language Selector -->
   <div class="lang-selector">
     <button class="lang-btn active" onclick="setLang('ko')">KO</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -260,7 +175,8 @@
   <section class="hero">
     <img src="images/icon.png" alt="GIRUDA" class="hero-icon">
     <h1>GIRUDA</h1>
-    <p class="subtitle" data-i18n="subtitle">전략적 트릭테이킹 카드게임</p>
+    <p class="subtitle" data-i18n="subtitle">5명이 즐기는 전략 카드게임, 마이티</p>
+    <p class="similar" data-i18n="similar">Similar to Bridge, Spades, Napoleon</p>
     <div class="download-buttons">
       <a href="https://apps.apple.com/us/app/giruda/id6758698236" target="_blank">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge-ios">
@@ -271,9 +187,104 @@
     </div>
   </section>
 
+  <!-- About Mighty -->
+  <div class="about-mighty">
+    <section style="padding: 0;">
+      <h2 data-i18n="about_title">마이티란?</h2>
+      <p class="section-desc" data-i18n="about_desc">한국에서 가장 사랑받는 트릭테이킹 카드게임</p>
+      <div class="about-content">
+        <div class="about-text">
+          <p data-i18n="about_p1">마이티는 5명이 트럼프 카드(조커 포함 53장)로 즐기는 전략 카드게임입니다. 공약을 선언하고 비밀 파트너와 함께 목표 트릭을 달성하세요.</p>
+          <p data-i18n="about_p2">Bridge나 Spades를 좋아한다면 마이티의 매력에 빠질 거예요. 비밀 파트너 시스템이 만들어내는 심리전과 전략적 깊이가 마이티만의 특별한 재미입니다.</p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="icon">👥</div>
+            <h4 data-i18n="hl1_title">5명 플레이</h4>
+            <p data-i18n="hl1_desc">주공 1명 + 비밀 프렌드 1명 vs 야당 3명</p>
+          </div>
+          <div class="highlight-item">
+            <div class="icon">🤝</div>
+            <h4 data-i18n="hl2_title">비밀 파트너</h4>
+            <p data-i18n="hl2_desc">프렌드가 누구인지 밝혀질 때까지 아무도 모릅니다</p>
+          </div>
+          <div class="highlight-item">
+            <div class="icon">🎯</div>
+            <h4 data-i18n="hl3_title">전략적 비딩</h4>
+            <p data-i18n="hl3_desc">패를 분석하고 공약을 선언하여 주공이 되세요</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Rules -->
+  <section class="rules">
+    <h2 data-i18n="rules_title">게임 흐름</h2>
+    <p class="section-desc" data-i18n="rules_desc">한 라운드는 이렇게 진행됩니다</p>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <span class="step">1</span>
+        <h3 data-i18n="r1_title">카드 배분</h3>
+        <p data-i18n="r1_desc">53장의 카드 중 각 플레이어에게 10장씩, 바닥에 3장이 놓입니다.</p>
+      </div>
+      <div class="rule-card">
+        <span class="step">2</span>
+        <h3 data-i18n="r2_title">비딩 (공약)</h3>
+        <p data-i18n="r2_desc">기루다(트럼프) 문양과 목표 트릭 수를 선언합니다. 가장 높은 공약을 한 사람이 주공이 됩니다.</p>
+      </div>
+      <div class="rule-card">
+        <span class="step">3</span>
+        <h3 data-i18n="r3_title">카드 교환</h3>
+        <p data-i18n="r3_desc">주공은 바닥 카드 3장을 가져오고, 불필요한 카드 3장을 버립니다.</p>
+      </div>
+      <div class="rule-card">
+        <span class="step">4</span>
+        <h3 data-i18n="r4_title">프렌드 지정</h3>
+        <p data-i18n="r4_desc">주공은 특정 카드를 지정하여 비밀 파트너(프렌드)를 정합니다. 해당 카드를 가진 사람이 프렌드가 됩니다.</p>
+      </div>
+      <div class="rule-card">
+        <span class="step">5</span>
+        <h3 data-i18n="r5_title">트릭 플레이</h3>
+        <p data-i18n="r5_desc">10트릭 동안 카드를 내며 점수 카드(A, K, Q, J, 10)를 모읍니다. 리드 문양을 따라야 합니다.</p>
+      </div>
+      <div class="rule-card">
+        <span class="step">6</span>
+        <h3 data-i18n="r6_title">승패 판정</h3>
+        <p data-i18n="r6_desc">여당(주공+프렌드)이 공약 이상의 점수를 모으면 승리! 아니면 야당이 이깁니다.</p>
+      </div>
+    </div>
+
+    <h3 style="text-align: center; margin-top: 48px; margin-bottom: 8px;" data-i18n="special_title">특수 카드</h3>
+    <p class="section-desc" data-i18n="special_desc">게임의 흐름을 바꾸는 강력한 카드들</p>
+    <div class="special-cards">
+      <div class="special-card">
+        <div class="card-icon">♠️</div>
+        <h4>Mighty</h4>
+        <p data-i18n="sc1_desc">가장 강한 카드. 언제든 낼 수 있고, 조커콜 외에는 무적입니다.</p>
+      </div>
+      <div class="special-card">
+        <div class="card-icon">🃏</div>
+        <h4>Joker</h4>
+        <p data-i18n="sc2_desc">두 번째로 강한 카드. 아무 문양으로든 낼 수 있습니다.</p>
+      </div>
+      <div class="special-card">
+        <div class="card-icon">♣️</div>
+        <h4 data-i18n="sc3_title">Joker Call</h4>
+        <p data-i18n="sc3_desc">조커를 강제로 끌어내는 카드. 조커의 유일한 약점입니다.</p>
+      </div>
+      <div class="special-card">
+        <div class="card-icon">🎴</div>
+        <h4 data-i18n="sc4_title">Giruda</h4>
+        <p data-i18n="sc4_desc">기루다(트럼프) 문양은 다른 문양보다 항상 강합니다.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Features -->
   <section class="features">
-    <h2 data-i18n="features_title">주요 기능</h2>
+    <h2 data-i18n="features_title">앱 기능</h2>
+    <p class="section-desc" data-i18n="features_desc">기루다에서 마이티의 모든 것을 즐기세요</p>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">🤖</div>
@@ -321,6 +332,19 @@
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="cta">
+    <h2 data-i18n="cta_title">지금 마이티를 시작하세요!</h2>
+    <div class="download-buttons">
+      <a href="https://apps.apple.com/us/app/giruda/id6758698236" target="_blank">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge-ios">
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.jakeppjk.mighty" target="_blank">
+        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="store-badge-android">
+      </a>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-links">
@@ -334,8 +358,28 @@
   <script>
     const i18n = {
       ko: {
-        subtitle: '전략적 트릭테이킹 카드게임',
-        features_title: '주요 기능',
+        subtitle: '5명이 즐기는 전략 카드게임, 마이티',
+        similar: 'Bridge, Spades와 비슷한 트릭테이킹 카드게임',
+        about_title: '마이티란?',
+        about_desc: '한국에서 가장 사랑받는 트릭테이킹 카드게임',
+        about_p1: '마이티는 5명이 트럼프 카드(조커 포함 53장)로 즐기는 전략 카드게임입니다. 공약을 선언하고 비밀 파트너와 함께 목표 트릭을 달성하세요.',
+        about_p2: 'Bridge나 Spades를 좋아한다면 마이티의 매력에 빠질 거예요. 비밀 파트너 시스템이 만들어내는 심리전과 전략적 깊이가 마이티만의 특별한 재미입니다.',
+        hl1_title: '5명 플레이', hl1_desc: '주공 1명 + 비밀 프렌드 1명 vs 야당 3명',
+        hl2_title: '비밀 파트너', hl2_desc: '프렌드가 누구인지 밝혀질 때까지 아무도 모릅니다',
+        hl3_title: '전략적 비딩', hl3_desc: '패를 분석하고 공약을 선언하여 주공이 되세요',
+        rules_title: '게임 흐름', rules_desc: '한 라운드는 이렇게 진행됩니다',
+        r1_title: '카드 배분', r1_desc: '53장의 카드 중 각 플레이어에게 10장씩, 바닥에 3장이 놓입니다.',
+        r2_title: '비딩 (공약)', r2_desc: '기루다(트럼프) 문양과 목표 트릭 수를 선언합니다. 가장 높은 공약을 한 사람이 주공이 됩니다.',
+        r3_title: '카드 교환', r3_desc: '주공은 바닥 카드 3장을 가져오고, 불필요한 카드 3장을 버립니다.',
+        r4_title: '프렌드 지정', r4_desc: '주공은 특정 카드를 지정하여 비밀 파트너(프렌드)를 정합니다. 해당 카드를 가진 사람이 프렌드가 됩니다.',
+        r5_title: '트릭 플레이', r5_desc: '10트릭 동안 카드를 내며 점수 카드(A, K, Q, J, 10)를 모읍니다. 리드 문양을 따라야 합니다.',
+        r6_title: '승패 판정', r6_desc: '여당(주공+프렌드)이 공약 이상의 점수를 모으면 승리! 아니면 야당이 이깁니다.',
+        special_title: '특수 카드', special_desc: '게임의 흐름을 바꾸는 강력한 카드들',
+        sc1_desc: '가장 강한 카드. 언제든 낼 수 있고, 조커콜 외에는 무적입니다.',
+        sc2_desc: '두 번째로 강한 카드. 아무 문양으로든 낼 수 있습니다.',
+        sc3_title: '조커콜', sc3_desc: '조커를 강제로 끌어내는 카드. 조커의 유일한 약점입니다.',
+        sc4_title: '기루다', sc4_desc: '기루다(트럼프) 문양은 다른 문양보다 항상 강합니다.',
+        features_title: '앱 기능', features_desc: '기루다에서 마이티의 모든 것을 즐기세요',
         f1_title: 'AI 대전', f1_desc: '3단계 난이도의 AI와 언제 어디서나 마이티를 즐기세요',
         f2_title: '온라인 멀티플레이', f2_desc: '친구와 함께 온라인으로 대전하세요',
         f3_title: '실전 튜토리얼', f3_desc: '직접 플레이하며 게임 규칙을 자연스럽게 배우세요',
@@ -343,11 +387,32 @@
         f5_title: '커스터마이징', f5_desc: '카드 뒷면과 테이블 테마를 취향대로 꾸미세요',
         f6_title: '다국어 지원', f6_desc: '한국어, English, 日本語, 中文, Español 지원',
         screenshots_title: '스크린샷',
+        cta_title: '지금 마이티를 시작하세요!',
         privacy: '개인정보처리방침', terms: '이용약관', contact: '문의'
       },
       en: {
-        subtitle: 'Strategic Trick-Taking Card Game',
-        features_title: 'Features',
+        subtitle: 'Mighty - Strategic Trick-Taking Card Game for 5 Players',
+        similar: 'Similar to Bridge, Spades, and Napoleon',
+        about_title: 'What is Mighty?',
+        about_desc: "Korea's most beloved trick-taking card game",
+        about_p1: 'Mighty is a strategic card game for 5 players using a standard deck plus joker (53 cards). Declare your bid and work with your secret partner to win tricks.',
+        about_p2: "If you love Bridge or Spades, you'll fall in love with Mighty. The secret partner system creates thrilling mind games and strategic depth unique to Mighty.",
+        hl1_title: '5 Players', hl1_desc: '1 Declarer + 1 Secret Friend vs 3 Defenders',
+        hl2_title: 'Secret Partner', hl2_desc: "Nobody knows who the Friend is until their card is played",
+        hl3_title: 'Strategic Bidding', hl3_desc: 'Analyze your hand and declare your bid to become the Declarer',
+        rules_title: 'How to Play', rules_desc: "Here's how a round works",
+        r1_title: 'Deal Cards', r1_desc: '10 cards each for 5 players, 3 cards go to the kitty.',
+        r2_title: 'Bidding', r2_desc: 'Declare your trump suit and target tricks. The highest bidder becomes the Declarer.',
+        r3_title: 'Card Exchange', r3_desc: 'The Declarer picks up the 3 kitty cards and discards 3 unwanted cards.',
+        r4_title: 'Friend Selection', r4_desc: 'The Declarer names a specific card. Whoever holds that card becomes the secret Friend.',
+        r5_title: 'Trick Play', r5_desc: 'Play 10 tricks, collecting point cards (A, K, Q, J, 10). You must follow the lead suit.',
+        r6_title: 'Result', r6_desc: "If the Declarer's team meets their bid, they win! Otherwise, the Defenders win.",
+        special_title: 'Special Cards', special_desc: 'Powerful cards that change the game',
+        sc1_desc: 'The strongest card. Can be played anytime. Unbeatable except by Joker Call.',
+        sc2_desc: 'The second strongest card. Can be played as any suit.',
+        sc3_title: 'Joker Call', sc3_desc: "Forces the Joker to be played. The Joker's only weakness.",
+        sc4_title: 'Giruda (Trump)', sc4_desc: 'The trump suit always beats other suits.',
+        features_title: 'App Features', features_desc: 'Experience everything Mighty has to offer',
         f1_title: 'AI Battle', f1_desc: 'Play Mighty anytime with 3 difficulty levels of AI',
         f2_title: 'Online Multiplayer', f2_desc: 'Play online with your friends',
         f3_title: 'Hands-on Tutorial', f3_desc: 'Learn the rules naturally by playing a real game',
@@ -355,11 +420,32 @@
         f5_title: 'Customization', f5_desc: 'Personalize card backs and table themes',
         f6_title: 'Multi-language', f6_desc: 'Supports Korean, English, Japanese, Chinese, Spanish',
         screenshots_title: 'Screenshots',
+        cta_title: 'Start playing Mighty now!',
         privacy: 'Privacy Policy', terms: 'Terms of Service', contact: 'Contact'
       },
       ja: {
-        subtitle: '戦略的トリックテイキングカードゲーム',
-        features_title: '主な機能',
+        subtitle: 'マイティ - 5人で楽しむ戦略カードゲーム',
+        similar: 'ナポレオン、ブリッジに似たトリックテイキングゲーム',
+        about_title: 'マイティとは？',
+        about_desc: '韓国で最も愛されるトリックテイキングカードゲーム',
+        about_p1: 'マイティは5人がトランプカード（ジョーカー含む53枚）で楽しむ戦略カードゲームです。ビッドを宣言し、秘密のパートナーと協力してトリックを獲得しましょう。',
+        about_p2: 'ナポレオンやブリッジが好きなら、マイティの魅力にハマるはず。秘密のパートナーシステムが生み出す心理戦と戦略的な奥深さが魅力です。',
+        hl1_title: '5人プレイ', hl1_desc: '主公1人 + 秘密のフレンド1人 vs 野党3人',
+        hl2_title: '秘密のパートナー', hl2_desc: 'フレンドが誰なのか明かされるまで誰も知りません',
+        hl3_title: '戦略的ビッド', hl3_desc: '手札を分析してビッドを宣言し、主公になりましょう',
+        rules_title: 'ゲームの流れ', rules_desc: '1ラウンドはこのように進みます',
+        r1_title: 'カード配布', r1_desc: '53枚のカードから各プレイヤーに10枚ずつ、残り3枚はキティへ。',
+        r2_title: 'ビッド（公約）', r2_desc: '切り札スートと目標トリック数を宣言。最高のビッドをした人が主公になります。',
+        r3_title: 'カード交換', r3_desc: '主公はキティの3枚を受け取り、不要な3枚を捨てます。',
+        r4_title: 'フレンド指名', r4_desc: '主公は特定のカードを指名してフレンドを決めます。そのカードを持つ人がフレンドです。',
+        r5_title: 'トリックプレイ', r5_desc: '10トリックの間カードを出し、得点カード（A, K, Q, J, 10）を集めます。リードスートに従う必要があります。',
+        r6_title: '勝敗判定', r6_desc: '与党（主公+フレンド）がビッド以上の得点を集めれば勝利！そうでなければ野党の勝ちです。',
+        special_title: '特殊カード', special_desc: 'ゲームの流れを変える強力なカード',
+        sc1_desc: '最強のカード。いつでも出せて、ジョーカーコール以外には無敵です。',
+        sc2_desc: '2番目に強いカード。どのスートとしても出せます。',
+        sc3_title: 'ジョーカーコール', sc3_desc: 'ジョーカーを強制的に出させるカード。ジョーカー唯一の弱点。',
+        sc4_title: 'ギルダ（切り札）', sc4_desc: '切り札スートは他のスートより常に強いです。',
+        features_title: 'アプリ機能', features_desc: 'ギルダでマイティのすべてを楽しもう',
         f1_title: 'AI対戦', f1_desc: '3段階の難易度のAIといつでもマイティを楽しめます',
         f2_title: 'オンラインマルチプレイ', f2_desc: '友達とオンラインで対戦しましょう',
         f3_title: '実践チュートリアル', f3_desc: '実際にプレイしながらルールを自然に学べます',
@@ -367,11 +453,32 @@
         f5_title: 'カスタマイズ', f5_desc: 'カードの裏面とテーブルテーマを自由に設定',
         f6_title: '多言語対応', f6_desc: '韓国語、English、日本語、中文、Español対応',
         screenshots_title: 'スクリーンショット',
+        cta_title: '今すぐマイティを始めよう！',
         privacy: 'プライバシーポリシー', terms: '利用規約', contact: 'お問い合わせ'
       },
       zh: {
-        subtitle: '策略性吃墩纸牌游戏',
-        features_title: '主要功能',
+        subtitle: 'Mighty - 5人策略抢墩纸牌游戏',
+        similar: '类似Bridge、Spades的抢墩纸牌游戏',
+        about_title: '什么是Mighty？',
+        about_desc: '韩国最受欢迎的抢墩纸牌游戏',
+        about_p1: 'Mighty是5人使用扑克牌（含大小王共53张）进行的策略纸牌游戏。宣布叫牌，与你的秘密伙伴一起赢取墩数。',
+        about_p2: '如果你喜欢Bridge或Spades，一定会爱上Mighty。秘密伙伴系统带来的心理博弈和策略深度是Mighty独有的乐趣。',
+        hl1_title: '5人游戏', hl1_desc: '庄家1人 + 秘密伙伴1人 vs 防守方3人',
+        hl2_title: '秘密伙伴', hl2_desc: '在伙伴的牌被打出之前，没人知道谁是伙伴',
+        hl3_title: '策略叫牌', hl3_desc: '分析手牌，宣布叫牌成为庄家',
+        rules_title: '游戏流程', rules_desc: '一个回合是这样进行的',
+        r1_title: '发牌', r1_desc: '53张牌中每人10张，3张放入底牌。',
+        r2_title: '叫牌', r2_desc: '宣布王牌花色和目标墩数。出价最高的人成为庄家。',
+        r3_title: '换牌', r3_desc: '庄家拿走3张底牌，弃掉3张不需要的牌。',
+        r4_title: '指定伙伴', r4_desc: '庄家指定一张特定的牌。持有该牌的人成为秘密伙伴。',
+        r5_title: '打牌', r5_desc: '进行10墩，收集得分牌（A, K, Q, J, 10）。必须跟随首出花色。',
+        r6_title: '判定胜负', r6_desc: '庄家一方达到叫牌目标就胜利！否则防守方获胜。',
+        special_title: '特殊牌', special_desc: '改变游戏走向的强力牌',
+        sc1_desc: '最强的牌。任何时候都能打出，除了小丑召唤外无敌。',
+        sc2_desc: '第二强的牌。可以作为任何花色打出。',
+        sc3_title: '小丑召唤', sc3_desc: '强制小丑出牌的卡。小丑唯一的弱点。',
+        sc4_title: '基鲁达（王牌）', sc4_desc: '王牌花色永远比其他花色强。',
+        features_title: '应用功能', features_desc: '在Giruda中体验Mighty的一切',
         f1_title: 'AI对战', f1_desc: '随时随地与3个难度的AI一起玩Mighty',
         f2_title: '在线多人', f2_desc: '与朋友在线对战',
         f3_title: '实战教程', f3_desc: '通过实际游戏自然学习规则',
@@ -379,19 +486,41 @@
         f5_title: '自定义', f5_desc: '自定义卡牌背面和桌面主题',
         f6_title: '多语言支持', f6_desc: '支持韩语、English、日本語、中文、Español',
         screenshots_title: '截图',
+        cta_title: '现在就开始玩Mighty！',
         privacy: '隐私政策', terms: '使用条款', contact: '联系我们'
       },
       es: {
-        subtitle: 'Juego de Cartas de Bazas Estratégico',
-        features_title: 'Características',
+        subtitle: 'Mighty - Juego de Cartas Estrategico para 5 Jugadores',
+        similar: 'Similar a Bridge, Spades y otros juegos de bazas',
+        about_title: 'Que es Mighty?',
+        about_desc: 'El juego de bazas mas querido de Corea',
+        about_p1: 'Mighty es un juego de cartas estrategico para 5 jugadores con una baraja estandar mas comodin (53 cartas). Declara tu apuesta y trabaja con tu aliado secreto para ganar bazas.',
+        about_p2: 'Si te gusta Bridge o Spades, te encantara Mighty. El sistema de aliado secreto crea un juego mental emocionante y una profundidad estrategica unica.',
+        hl1_title: '5 Jugadores', hl1_desc: '1 Declarante + 1 Aliado secreto vs 3 Defensores',
+        hl2_title: 'Aliado Secreto', hl2_desc: 'Nadie sabe quien es el Aliado hasta que se juega su carta',
+        hl3_title: 'Apuesta Estrategica', hl3_desc: 'Analiza tu mano y declara tu apuesta para ser el Declarante',
+        rules_title: 'Como Jugar', rules_desc: 'Asi funciona una ronda',
+        r1_title: 'Repartir', r1_desc: '10 cartas para cada jugador, 3 cartas van al pozo.',
+        r2_title: 'Apuesta', r2_desc: 'Declara el palo de triunfo y las bazas objetivo. El mayor postor se convierte en Declarante.',
+        r3_title: 'Intercambio', r3_desc: 'El Declarante toma las 3 cartas del pozo y descarta 3 cartas no deseadas.',
+        r4_title: 'Seleccion de Aliado', r4_desc: 'El Declarante nombra una carta especifica. Quien tenga esa carta se convierte en el Aliado secreto.',
+        r5_title: 'Juego de Bazas', r5_desc: 'Juega 10 bazas, recolectando cartas de puntos (A, K, Q, J, 10). Debes seguir el palo de salida.',
+        r6_title: 'Resultado', r6_desc: 'Si el equipo del Declarante cumple su apuesta, gana! Si no, los Defensores ganan.',
+        special_title: 'Cartas Especiales', special_desc: 'Cartas poderosas que cambian el juego',
+        sc1_desc: 'La carta mas fuerte. Se puede jugar en cualquier momento. Imbatible excepto por Joker Call.',
+        sc2_desc: 'La segunda carta mas fuerte. Se puede jugar como cualquier palo.',
+        sc3_title: 'Joker Call', sc3_desc: 'Obliga al Joker a ser jugado. La unica debilidad del Joker.',
+        sc4_title: 'Giruda (Triunfo)', sc4_desc: 'El palo de triunfo siempre gana a otros palos.',
+        features_title: 'Caracteristicas', features_desc: 'Experimenta todo lo que Mighty ofrece',
         f1_title: 'Batalla contra IA', f1_desc: 'Juega Mighty en cualquier momento con 3 niveles de IA',
-        f2_title: 'Multijugador en línea', f2_desc: 'Juega en línea con tus amigos',
-        f3_title: 'Tutorial práctico', f3_desc: 'Aprende las reglas naturalmente jugando una partida real',
-        f4_title: 'Logros y estadísticas', f4_desc: 'Desbloquea 80 logros y revisa tus estadísticas detalladas',
-        f5_title: 'Personalización', f5_desc: 'Personaliza el dorso de las cartas y los temas de mesa',
-        f6_title: 'Multiidioma', f6_desc: 'Soporta coreano, inglés, japonés, chino y español',
+        f2_title: 'Multijugador en linea', f2_desc: 'Juega en linea con tus amigos',
+        f3_title: 'Tutorial practico', f3_desc: 'Aprende las reglas naturalmente jugando una partida real',
+        f4_title: 'Logros y estadisticas', f4_desc: 'Desbloquea 80 logros y revisa tus estadisticas detalladas',
+        f5_title: 'Personalizacion', f5_desc: 'Personaliza el dorso de las cartas y los temas de mesa',
+        f6_title: 'Multiidioma', f6_desc: 'Soporta coreano, ingles, japones, chino y espanol',
         screenshots_title: 'Capturas de pantalla',
-        privacy: 'Política de privacidad', terms: 'Términos de servicio', contact: 'Contacto'
+        cta_title: 'Empieza a jugar Mighty ahora!',
+        privacy: 'Politica de privacidad', terms: 'Terminos de servicio', contact: 'Contacto'
       }
     };
 
@@ -411,9 +540,14 @@
       history.replaceState(null, '', url);
     }
 
-    // Init language from URL param
+    // Auto-detect language from URL param or browser language
     const urlLang = new URLSearchParams(window.location.search).get('lang');
-    if (urlLang && i18n[urlLang]) setLang(urlLang);
+    if (urlLang && i18n[urlLang]) {
+      setLang(urlLang);
+    } else {
+      const browserLang = (navigator.language || navigator.userLanguage || 'ko').split('-')[0].toLowerCase();
+      if (i18n[browserLang]) setLang(browserLang);
+    }
   </script>
 
 </body>
